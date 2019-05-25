@@ -1,0 +1,8 @@
+var orders = document.getElementsByClassName("order-card-metainfo")
+var orderTotal = 0;
+for(let i=0;i<orders.length;i++){
+	var amount = orders[i].innerHTML.split(">Total")[1].split("</p>")[0]
+	amount = amount.match(/[0-9.]/g).join("")
+	orderTotal += parseFloat(amount)
+}
+console.log(orderTotal)
